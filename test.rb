@@ -15,27 +15,34 @@ def apply_coupons(cart, coupons)
     coupon_count = 0
     item = cart[item_count][:item]
     while coupon_count < coupons.length do
-      if item == coupon[coupon_count][:name] #does cart item match any coupons?
-        coupon_qty = cart[item_count][:num]
-        if cart[item_count][:num] >= coupon_qty
-          new_price = coupon[coupon_count][:price] / coupon_qty
+      if item == coupons[coupon_count][:item] #does cart item match any coupons?
+        coupon_qty = coupons[coupon_count][:num]
+        if cart[item_count][:count] >= coupon_qty
+          new_price = coupons[coupon_count][:cost] / coupon_qty
           result.push({item: "#{item} W/COUPON", price: new_price, clearance: cart[item_count][:clearance], count: 0})
           while cart[item_count][:count] >= coupon_qty do #does qty match requirments?
             result[-1][:count] += coupon_qty
-            cart[item_count][:count] - coupon_qty
+            cart[item_count][:count] -= coupon_qty
           end
-
         end
+
+        if cart[item_count][:count] > 0
+          result.push(cart[item_count]) #push remaining qtys into results
+          cart.delete_at(item_count)
+        end
+
+        #extra - if we want to remove entire hash when itemcount = 0
+      #  if cart[item_count][:count] == 0
+      #    cart.delete_at(item_count)
+      #  end
       end #if coupon match name end statement
 
-      coupons += 1
+       coupon_count += 1
     end
 
     item_count += 1
   end
-  result.push(cart)
-  result
+  result + cart
 end
-
 
 puts apply_coupons(test1, test2)
