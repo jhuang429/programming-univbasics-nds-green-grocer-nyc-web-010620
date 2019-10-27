@@ -33,7 +33,8 @@ def consolidate_cart(cart)
     innerhash = value
     thing = {item: key, count: innerhash[:count], clearance: innerhash[:clearance], price: innerhash[:price]}
     final.push(thing)
-
+  end
+  
   final
 end
 
