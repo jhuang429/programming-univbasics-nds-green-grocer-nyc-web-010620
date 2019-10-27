@@ -34,7 +34,7 @@ def consolidate_cart(cart)
     thing = {item: key, count: innerhash[:count], clearance: innerhash[:clearance], price: innerhash[:price]}
     final.push(thing)
   end
-  
+
   final
 end
 
@@ -61,10 +61,10 @@ def apply_coupons(cart, coupons)
           cart.delete_at(item_count)
         end
 
-        if cart[item_count][:count] == 0
-          cart.delete_at(item_count)
-
-        end
+        #extra - if we want to remove entire hash when itemcount = 0
+      #  if cart[item_count][:count] == 0
+      #    cart.delete_at(item_count)
+      #  end
       end #if coupon match name end statement
 
        coupon_count += 1
