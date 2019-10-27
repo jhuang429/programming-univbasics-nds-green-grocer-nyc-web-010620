@@ -1,9 +1,11 @@
 test1 = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
-  {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
+  {:item => "CHEESE", :price => 6.50, :clearance => false, :count => 4}},
 ]
 
-test2 = [{:item => "AVOCADO", :num => 2, :cost => 5.00}]
+test2 = [{:item => "AVOCADO", :num => 2, :cost => 5.00},
+{:item => "CHEESE", :num => 3, :cost => 15.00}
+]
 
 
 def apply_coupons(cart, coupons)
@@ -23,14 +25,6 @@ def apply_coupons(cart, coupons)
             cart[item_count][:count] - coupon_qty
           end
 
-        if cart[item_count] > 0
-          result.push(cart[item_count]) #push remaining qtys into results
-          cart.delete_at(item_count)
-        end
-
-        if cart[item_count] == 0
-          cart.delete_at(item_count)
-
         end
       end #if coupon match name end statement
 
@@ -42,6 +36,6 @@ def apply_coupons(cart, coupons)
   result.push(cart)
   result
 end
-end
+
 
 puts apply_coupons(test1, test2)
