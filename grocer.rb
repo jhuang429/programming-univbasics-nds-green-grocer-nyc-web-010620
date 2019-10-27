@@ -12,6 +12,7 @@ end
 def consolidate_cart(cart)
   item_count = 0
   result = {}
+  final =[]
 
   while item_count < cart.length do
     item = cart[item_count][:item]
@@ -28,7 +29,10 @@ def consolidate_cart(cart)
     item_count += 1
   end
 
-  result
+  result.each do |key, value|
+    innerhash = value
+    thing = {item: key, count: innerhash[:count], clearance: innerhash[:clearance], price: innerhash[:price]}
+    final.push(thing)
 
 end
 
