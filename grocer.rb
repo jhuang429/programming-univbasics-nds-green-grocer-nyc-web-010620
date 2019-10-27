@@ -34,6 +34,7 @@ def consolidate_cart(cart)
     thing = {item: key, count: innerhash[:count], clearance: innerhash[:clearance], price: innerhash[:price]}
     final.push(thing)
 
+  final
 end
 
 def apply_coupons(cart, coupons)
