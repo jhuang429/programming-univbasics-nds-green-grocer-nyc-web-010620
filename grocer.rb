@@ -90,6 +90,12 @@ end
 
 
 def checkout(cart, coupons)
+  consolidate_cart = consolidate_cart(cart)
+  applied_coupons = apply_coupons(consolidate_cart, coupons)
+  applied_clearnce = apply_clearance(applied_coupons)
+
+
+
   # Consult README for inputs and outputs
   #
   # This method should call
