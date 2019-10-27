@@ -62,12 +62,12 @@ def apply_coupons(cart, coupons)
        coupon_count += 1
     end
 
+#extra - if we want to remove entire hash when itemcount = 0
   #  if cart[item_count][:count] > 0
   #    result.push(cart[item_count]) #push remaining qtys into results
   #    cart.delete_at(item_count)
   #  end
 
-    #extra - if we want to remove entire hash when itemcount = 0
   #  if cart[item_count][:count] == 0
   #    cart.delete_at(item_count)
   #  end
@@ -78,9 +78,12 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  i = o
+  while i < cart.length do
+    if cart[i][:clearance] = true
+      cart[i][:price] *= .80
+  end
+  cart
 end
 
 def checkout(cart, coupons)
