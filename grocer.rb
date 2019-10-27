@@ -77,16 +77,16 @@ def apply_coupons(cart, coupons)
   result + cart
 end
 
-=begin def apply_clearance(cart)
+ def apply_clearance(cart)
   i = o
   while i < cart.length do
     if cart[i][:clearance] = true
       cart[i][:price] *= 0.8
+    end
   end
   cart
 end
 
-=end
 
 def checkout(cart, coupons)
   # Consult README for inputs and outputs
