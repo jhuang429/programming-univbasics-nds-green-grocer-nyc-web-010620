@@ -17,7 +17,7 @@ def apply_coupons(cart, coupons)
         coupon_qty = cart[item_count][:num]
         if cart[item_count][:num] >= coupon_qty
           new_price = coupon[coupon_count][:price] / coupon_qty
-          result.push({item: "#{item} W/COUPON", price: new_price, clearance: cart[item_count], [:clearance], count: 0})
+          result.push({item: "#{item} W/COUPON", price: new_price, clearance: cart[item_count][:clearance], count: 0})
           while cart[item_count][:count] >= coupon_qty do #does qty match requirments?
             result[-1][:count] += coupon_qty
             cart[item_count][:count] - coupon_qty
