@@ -44,11 +44,11 @@ def consolidate_cart(cart)
     item_count += 1
   end
 
-  result.each do |key, value|
+  result.each { |key, value|
     innerhash = value
     thing = {item: key, count: innerhash[:count], clearance: innerhash[:clearance], price: innerhash[:price]}
     final.push(thing)
-  end
+  }
   
   final
 
