@@ -33,9 +33,32 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  item_count = 0 
+  result = []
+  while item_count < cart.length do
+    coupon_count = 0
+    item = cart[item_count][:item]
+    while coupon_count < coupons.length do
+      if item == coupon[coupon_count][:name] #does cart item match any coupons?
+        coupon_qty = cart[item_count][:num]
+        if cart[item_count][:num] >= coupon_qty
+          new_price = coupon[coupon_count][:price] / coupon_qty
+          result.push({item: "#{item} W/COUPON" price: new_price, clearance: cart[item_count][:clearance], count: 0})
+          while cart[item_count][:count] >= coupon_qty do #does qty match requirments?
+            result[-1][:count] += coupon_qty
+            cart[item_count][:count] - coupon_qty
+          end
+        end
+      else
+        result
+      end #if coupon match name end statement
+
+      coupons += 1
+    end
+
+    item_count += 1 
+  end
+  
 end
 
 def apply_clearance(cart)
