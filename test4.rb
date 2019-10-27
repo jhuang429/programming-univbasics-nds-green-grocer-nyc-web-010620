@@ -6,8 +6,8 @@ test1 = [
 def apply_clearance(cart)
  i = 0
  while i < cart.length do
-   if cart[i][:clearance] = true
-     cart[i][:price] *= 0.8
+   if cart[i][:clearance] == true
+     cart[i][:price] *= 0.8.round(2)
    end
    i += 1
  end
