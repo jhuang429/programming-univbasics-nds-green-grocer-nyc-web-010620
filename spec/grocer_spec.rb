@@ -49,7 +49,7 @@ describe "Grocer" do
   describe "#consolidate_cart" do
     it "adds a count of one to each item when there are no duplicates" do
       cart = [find_item_by_name_in_collection('TEMPEH', items), find_item_by_name_in_collection('PEANUTBUTTER', items), find_item_by_name_in_collection('ALMONDS', items)]
-      # consolidated_cart = consolidate_cart(cart)
+      consolidated_cart = consolidate_cart(cart)
       i = 0
       while i < consolidated_cart.length do
         expect(consolidated_cart[i][:count]).to eq(1)
