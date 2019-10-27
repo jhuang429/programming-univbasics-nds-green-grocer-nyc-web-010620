@@ -83,6 +83,7 @@ end
     if cart[i][:clearance] = true
       cart[i][:price] *= 0.8
     end
+    i += 1
   end
   cart
 end
