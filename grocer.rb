@@ -95,6 +95,8 @@ def checkout(cart, coupons)
   applied_coupons = apply_coupons(consolidate_cart, coupons)
   applied_clearance = apply_clearance(applied_coupons)
 
+
+puts applied_clearance
   i = 0
   while i < applied_clearance.length do
     total += applied_clearance[i][:price] * applied_clearance[i][:count]
