@@ -15,7 +15,7 @@ def consolidate_cart(cart)
 
   while item_count < cart.length do
     item = cart[item_count][:item]
-    result[item] => {count: 0}
+    result[item] = {count: 0}
     item_count += 1
   end
 
