@@ -1,7 +1,10 @@
 test = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true },
   {:item => "AVOCADO", :price => 3.00, :clearance => true },
-  {:item => "KALE", :price => 3.00, :clearance => false}
+  {:item => "KALE", :price => 3.00, :clearance => false},
+  {:item => "KALE", :price => 3.00, :clearance => false},
+  {:item => "KALE", :price => 4.00, :clearance => false},
+  {:item => "PB", :price => 3.00, :clearance => false}
 ]
 
 def consolidate_cart(cart)
