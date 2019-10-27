@@ -1,6 +1,6 @@
 test1 = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
-  {:item => "CHEESE", :price => 6.50, :clearance => false, :count => 4}},
+  {:item => "CHEESE", :price => 6.50, :clearance => false, :count => 4},
 ]
 
 test2 = [{:item => "AVOCADO", :num => 2, :cost => 5.00},
