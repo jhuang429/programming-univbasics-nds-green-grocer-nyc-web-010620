@@ -81,7 +81,8 @@ end
   i = 0
   while i < cart.length do
     if cart[i][:clearance] == true
-      cart[i][:price] *= 0.8.round(2)
+      cart[i][:price] *= 0.8
+      cart[i][:price].round(2)
     end
     i += 1
   end
@@ -103,10 +104,10 @@ def checkout(cart, coupons)
   end
 
   if total > 100
-    total *= 0.90.round(2)
+    total *= 0.90
   end
 
-  total
+  total.round(2)
 
 
   # Consult README for inputs and outputs
