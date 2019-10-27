@@ -15,8 +15,20 @@ def consolidate_cart(cart)
 
   while item_count < cart.length do
     item = cart[item_count][:item]
-    cart[item] => {count: 0}
+    result[item] => {count: 0}
+    item_count += 1
   end
+
+  item_count = 0
+  while item_count < cart.length do
+    item = cart[item_count][:item]
+    result[item][:count] += 1
+    result[item][:clearance] = cart[item_count][:clearance]
+    result[item][:price] = cart[item_count][:price]
+    item_count += 1
+  end
+
+  result
 
 end
 
