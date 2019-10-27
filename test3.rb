@@ -28,6 +28,7 @@ cart = [find_item_by_name_in_collection('TEMPEH', items), find_item_by_name_in_c
 def consolidate_cart(cart)
   item_count = 0
   result = {}
+  final = []
 
   while item_count < cart.length do
     item = cart[item_count][:item]
