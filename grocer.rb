@@ -78,7 +78,7 @@ def apply_coupons(cart, coupons)
 end
 
  def apply_clearance(cart)
-  i = o
+  i = 0
   while i < cart.length do
     if cart[i][:clearance] = true
       cart[i][:price] *= 0.8
