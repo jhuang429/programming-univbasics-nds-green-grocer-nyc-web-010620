@@ -42,5 +42,6 @@ def apply_coupons(cart, coupons)
   result.push(cart)
   result
 end
+end
 
 puts apply_coupons(test1, test2)
