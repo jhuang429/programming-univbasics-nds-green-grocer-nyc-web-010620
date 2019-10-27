@@ -33,7 +33,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  item_count = 0 
+  item_count = 0
   result = []
   while item_count < cart.length do
     coupon_count = 0
@@ -56,9 +56,9 @@ def apply_coupons(cart, coupons)
       coupons += 1
     end
 
-    item_count += 1 
+    item_count += 1
   end
-  
+
 end
 
 def apply_clearance(cart)
