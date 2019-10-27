@@ -28,4 +28,4 @@ test = [
   {:item => "KALE", :price => 3.00, :clearance => false}
 ]
 
-consolidate_cart(test)
+puts consolidate_cart(test)
