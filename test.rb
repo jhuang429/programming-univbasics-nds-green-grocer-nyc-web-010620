@@ -27,4 +27,4 @@ def consolidate_cart(cart)
 
 end
 
-consolidate_cart(test)
+puts consolidate_cart(test)
