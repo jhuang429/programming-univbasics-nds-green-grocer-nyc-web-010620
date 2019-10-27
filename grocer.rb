@@ -48,9 +48,16 @@ def apply_coupons(cart, coupons)
             result[-1][:count] += coupon_qty
             cart[item_count][:count] - coupon_qty
           end
+          
+        if cart[item_count] > 0
+          result.push(cart[item_count]) #push remaining qtys into results
+          cart.delete_at(item_count)
         end
-      else
-        result
+
+        if cart[item_count] == 0
+          cart.delete_at(item_count)
+        
+        end
       end #if coupon match name end statement
 
       coupons += 1
@@ -58,7 +65,8 @@ def apply_coupons(cart, coupons)
 
     item_count += 1
   end
-
+  result.push(cart)
+  result 
 end
 
 def apply_clearance(cart)
