@@ -26,19 +26,21 @@ def apply_coupons(cart, coupons)
           end
         end
 
-        if cart[item_count][:count] > 0
-          result.push(cart[item_count]) #push remaining qtys into results
-          cart.delete_at(item_count)
-        end
 
-        #extra - if we want to remove entire hash when itemcount = 0
-      #  if cart[item_count][:count] == 0
-      #    cart.delete_at(item_count)
-      #  end
-      end #if coupon match name end statement
 
        coupon_count += 1
     end
+    
+    if cart[item_count][:count] > 0
+      result.push(cart[item_count]) #push remaining qtys into results
+      cart.delete_at(item_count)
+    end
+
+    #extra - if we want to remove entire hash when itemcount = 0
+  #  if cart[item_count][:count] == 0
+  #    cart.delete_at(item_count)
+  #  end
+  end #if coupon match name end statement
 
     item_count += 1
   end
