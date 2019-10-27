@@ -22,4 +22,8 @@ list = [
   {:item => "SOY MILK", :price => 4.50, :clearance => true}
 ]
 
-puts find_item_by_name_in_collection("AVOCADO", list)
+
+cart = [find_item_by_name_in_collection('TEMPEH', items), find_item_by_name_in_collection('PEANUTBUTTER', items), find_item_by_name_in_collection('ALMONDS', items)]
+consolidated_cart = consolidate_cart(cart)
+
+puts cart
